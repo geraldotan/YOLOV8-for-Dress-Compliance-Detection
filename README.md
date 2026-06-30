@@ -107,7 +107,3 @@ Due to differences in software versions, dependencies, hardware, and training en
 ## Publication
 
 This repository accompanies a published research project. The implementation has been organized for public release and educational purposes.
-
-## License
-
-This project is licensed under the MIT License.
