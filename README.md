@@ -37,7 +37,7 @@ The dataset is not included in this repository. Please download it from the orig
 ```.
 ├── app.py
 ├── requirements.txt
-├── YOLOV8_Deteksi_AturanBerpakaianMahasiswa_GeraldoTan.ipynb
+├── deteksiAturanBerpakaianMahasiswaYOLOV8_GeraldoTan.ipynb
 ├── templates/
 ├── venv/
 ├── static/
