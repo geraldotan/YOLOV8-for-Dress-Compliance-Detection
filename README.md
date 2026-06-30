@@ -97,7 +97,11 @@ http://127.0.0.1:5000
 
 ## Reproducibility
 
-This repository contains the implementation of the proposed method. Due to differences in software versions, hardware, and training environments, reproduced results may vary slightly from those obtained during the original experiments.
+This repository contains a reorganized and updated implementation of the published research project.
+
+The original development notebooks used during the research were not preserved. The included notebook demonstrates the current training and inference workflow for reproducibility purposes.
+
+Due to differences in software versions, dependencies, hardware, and training environments, reproduced evaluation metrics may differ from those reported in the publication.
 
 ## Publication
 
