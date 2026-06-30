@@ -13,15 +13,16 @@ A Flask-based web application for detecting dress compliance violations using YO
 
 ## Dataset
 
-The dataset was downloaded using the Roboflow Python API.
+This project was trained using the **clothes classfy** object detection dataset from Roboflow Universe.
 
-```python
-from roboflow import Roboflow
+- **Dataset:** clothes classfy
+- **Author:** zhaozhao
+- **Platform:** Roboflow Universe
+- **Task:** Object Detection
+- **Classes:** Tshirt, Dress, Jacket, Pants, Shirt, Short, Skirt, Sweater
+- **License:** CC BY 4.0
 
-rf = Roboflow(api_key="YOUR_API_KEY")
-project = rf.workspace("zhaozhao-aydpp").project("clothes-classfy")
-version = project.version(1)
-dataset = version.download("yolov8")
+The dataset is not included in this repository. Please download it from the original Roboflow Universe project.
 
 ## Tech Stack
 
