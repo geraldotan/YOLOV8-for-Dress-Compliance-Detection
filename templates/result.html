@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hasil Deteksi</title>
+    <style>
+        body { font-family: Arial; display:flex; flex-direction:column; align-items:center; padding:20px; background:#f4f6f8; }
+        img, video { max-width:80%; border-radius:10px; margin:20px 0; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+        button { padding:10px 20px; margin-top:20px; border:none; background:#007bff; color:white; border-radius:5px; cursor:pointer;}
+        button:hover { background:#0056b3; }
+    </style>
+</head>
+<body>
+    <h1>Detection Result</h1>
+
+    {% if media_type == 'image' %}
+        <img src="{{ url_for('output_file', filename=output_file) }}" alt="Detection">
+    {% elif media_type == 'video' %}
+        <video controls>
+            <source src="{{ url_for('output_file', filename=output_file) }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    {% endif %}
+
+    {% if report_file %}
+        <!-- Tombol download laporan PDF -->
+        <a href="{{ url_for('report_file', filename=report_file) }}" target="_blank">
+            <button>Download Laporan PDF</button>
+        </a>
+    {% endif %}
+
+    <a href="{{ url_for('index') }}"><button>Back</button></a>
+</body>
+</html>

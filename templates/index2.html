@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deteksi Kepatuhan Berpakaian di Kampus</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #d9e4f5, #f6f9fc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Container utama */
+        .container {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 40px 50px;
+            width: 90%;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 1.7em;
+            margin-bottom: 25px;
+        }
+
+        /* Bagian upload */
+        .upload-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .upload-box {
+            background: #f8f9fc;
+            border-radius: 15px;
+            padding: 25px 20px;
+            width: 320px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .upload-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 1.3em;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        input[type="file"] {
+            display: block;
+            margin: 10px auto 15px auto;
+            font-size: 0.9em;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            font-size: 1em;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.03);
+        }
+
+        /* Tombol live camera */
+        .live-section {
+            margin-top: 35px;
+        }
+
+        .live-section button {
+            background-color: #28a745;
+        }
+
+        .live-section button:hover {
+            background-color: #1e7e34;
+        }
+
+        /* Hasil deteksi */
+        .result-section {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .media-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        img, video {
+            border-radius: 15px;
+            max-width: 100%;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Responsif */
+        @media (max-width: 768px) {
+            .upload-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .upload-box {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Deteksi Kepatuhan Berpakaian di Kampus</h1>
+
+        <div class="upload-wrapper">
+            <!-- Upload Gambar -->
+            <div class="upload-box">
+                <h2>Upload Image</h2>
+                <form method="POST" enctype="multipart/form-data">
+                    <input type="file" name="image" accept="image/*" required>
+                    <button type="submit">Upload Image</button>
+                </form>
+            </div>
+
+            <!-- Upload Video -->
+            <div class="upload-box">
+                <h2>Upload Video</h2>
+                <form method="POST" enctype="multipart/form-data">
+                    <input type="file" name="video" accept="video/*" required>
+                    <button type="submit">Upload Video</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="live-section">
+            <h2>Or Use Live Camera</h2>
+            <form action="{{ url_for('live') }}">
+                <button type="submit">Start Live Detection</button>
+            </form>
+        </div>
+
+        {% if output_image %}
+        <div class="result-section">
+            <h2>Detection Result (Image):</h2>
+            <div class="media-container">
+                <img src="{{ url_for('output_file', filename=output_image) }}" alt="Detection Image">
+            </div>
+        </div>
+        {% endif %}
+
+        {% if output_video %}
+        <div class="result-section">
+            <h2>Detection Result (Video):</h2>
+            <div class="media-container">
+                <video controls>
+                    <source src="{{ url_for('output_file', filename=output_video) }}" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
