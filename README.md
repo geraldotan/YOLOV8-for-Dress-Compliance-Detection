@@ -33,6 +33,8 @@ The dataset is not included in this repository. Please download it from the orig
 - NumPy
 - ReportLab
 
+```
+
 ## Project Structure
 .
 ├── app.py
