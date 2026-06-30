@@ -92,11 +92,8 @@ http://127.0.0.1:5000
 
 ## Demo
 
-<img width="1440" height="900" alt="Tangkapan Layar 2026-06-30 pukul 22 35 58" src="https://github.com/user-attachments/assets/e9fac541-9c34-487a-b5cd-12d92d3a9aa2" />
-
-
-<img width="1440" height="900" alt="Tangkapan Layar 2026-06-30 pukul 22 21 26" src="https://github.com/user-attachments/assets/3f10d307-9564-4b55-9b58-17d46b9d4b3e" />
-
+<img width="1440" height="900" alt="Tangkapan Layar 2026-06-30 pukul 22 21 26" src="https://github.com/user-attachments/assets/fdedb74f-48c1-463c-a749-972349a73b2e" />
+<img width="1440" height="900" alt="Tangkapan Layar 2026-06-30 pukul 22 56 17" src="https://github.com/user-attachments/assets/f9aed834-1ab9-4ab2-b4f5-018233e3fb11" />
 
 ## Reproducibility
 
