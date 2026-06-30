@@ -34,7 +34,6 @@ The dataset is not included in this repository. Please download it from the orig
 - ReportLab
 
 ```
-
 ## Project Structure
 .
 ├── app.py
